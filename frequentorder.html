@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently ordered products</title>
+    <link rel="stylesheet" href="style/frequentorder.css">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <script src="js/scripts.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="images/icon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+  </head>
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+          <a href="index.html">Home</a>
+          <a href="news.html" >News</a>
+          <a href="contacts.html">Contacts</a>
+          <a href="about.html">About</a>
+          <a href="partners.html">Partners</a>
+          <a href="frequentorder.html" class="active">Frequently ordered products</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+    <div class="toptext">
+      <div class="mpaddingtop"></div>
+        <h1>Top products</h2> <br>
+        <h3>Enjoy shopping, we will deliver to any destination:)</h4>
+    </div>  
+
+  <section id="productssection" class="team-section">
+    <div class="container">
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="team-items">
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src=images/top1.jpg alt="topproduct" />
+                    <figcaption>Gildan Men's Fleece Hooded Sweatshirt, Style G18500</figcaption>
+                  </figure>
+                </div>
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src="images/top3.jpg" alt="topproduct" />
+                    <figcaption>Carhartt Men's Acrylic Watch Hat A18</figcaption>
+                  </figure>
+                </div>
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src="images/top4.jpg" alt="topproduct" />
+                    <figcaption>Legendary Whitetails Men's Buck Camp Flannel Shirt</figcaption>
+                  </figure>
+                </div>
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src="images/top5.jpg" alt="topproduct" />
+                    <figcaption>Greenlights</figcaption>
+                  </figure>
+                </div>
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src="images/top6.jpg" alt="topproduct" />
+                    <figcaption>Fire TV Stick 4K streaming device with Alexa built in, Dolby Vision, includes Alexa Voice Remote, latest release</figcaption>
+                  </figure>
+                </div>
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src="images/top7.jpg" alt="topproduct" />
+                    <figcaption>Insignia Smart HD TV - Fire TV Edition</figcaption>
+                  </figure>
+                </div>
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src="images/top8.jpg" alt="topproduct" />
+                    <figcaption>Wyze Cam 1080p HD Indoor WiFi Smart Home Camera with Night Vision, 2-Way Audio, Works with Alexa & the Google Assistant, White, 1-Pack</figcaption>
+                  </figure>
+                </div>
+                <div class="item">
+                  <figure>
+                    <img style="height: 270px; width: 240px;" src="images/top9.jpg" alt="topproduct" />
+                    <figcaption>Gskyer Telescope, 70mm Aperture 400mm AZ Mount Astronomical Refracting Telescope for Kids Beginners - Travel Telescope with Carry Bag, Phone Adapter and Wireless Remote</figcaption>
+                  </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h1 id="delivery.uz"> Delivery.uz is - 
+  <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ " cool.", " simple.", " rocky.", "pretty.", "fun!" ]'></span>
+</h1>
+<h2>Enjoy shopping, delivery is our job:)</h2>
+
+
+      <footer id="footer">
+        <p class="text">Sign up to recieve special offers and updates</p>
+        <form>
+            <input type="email" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <ul class="list-footer">
+            <li>Contact us: +99899999999</li>
+            <li>Email: deliveryUz@gmail.com</li>
+            <li>Our Address in Tashkent</li>
+        </ul>
+        <p class="copyrights">&copy; 2020 This website was created to fullfill Web Technology module`s
+            requirements and does not represent an actual company or service</p>
+      </footer>
+<script> //this keyword refers to the object it belongs to
+  var TxtRotate = function(el, toRotate, period) { //In a function, this refers to the global object
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000; //The parseInt() function parses a string and returns an integer.
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1); //The substring() method extracts the characters from a string, between two specified indices, and returns the new sub string.
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100; //Math.random() returns a random number
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+//The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds.
+//1000 ms = 1 second.
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+//The onload event occurs when an object has been loaded.
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  //The getElementsByClassName() method returns a collection of all elements in the document with the specified class name
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    //The getAttribute() method returns the value of the attribute with the specified name, of an element.
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  //The createElement() method creates an Element Node with the specified name.
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);//The appendChild() method appends a node as the last child of a node.
+};
+</script>
+</body>
+</html>
